@@ -110,6 +110,8 @@ public class Client {
 		this.comptes = comptes;
 	}
 
+	// verser les intérêts sur les comptes :
+
 	// soit on filtre d'abord les comptes rémunérés
 	public List<CompteRemunere> getComptesRemuneres() {
 		List<CompteRemunere> comptesRemunereList = new ArrayList<>();
@@ -132,6 +134,14 @@ public class Client {
 		for (Compte compte : this.comptes) {
 			if (compte instanceof CompteRemunere) {
 				((CompteRemunere) compte).verserInterets();
+			}
+		}
+	}
+
+	public void verserInteretsComptesUsingInterface() {
+		for (Compte compte : this.comptes) {
+			if (compte instanceof CompteASeuilRemunere) {
+				((CompteASeuilRemunere) compte).verserInterets();
 			}
 		}
 	}

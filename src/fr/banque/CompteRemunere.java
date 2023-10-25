@@ -1,6 +1,6 @@
 package fr.banque;
 
-public class CompteRemunere extends Compte {
+public class CompteRemunere extends Compte implements ICompteRemunere {
 
 	private double taux;
 	// valeur sera comprise entre 0 et 1
@@ -14,10 +14,12 @@ public class CompteRemunere extends Compte {
 		this.taux = taux;
 	}
 
+	@Override
 	public double getTaux() {
 		return this.taux;
 	}
 
+	@Override
 	public void setTaux(double taux) {
 		this.taux = taux;
 	}
@@ -27,10 +29,12 @@ public class CompteRemunere extends Compte {
 		return super.toString() + ", taux : " + this.getTaux() + ", interêts : " + this.calculerInterets();
 	}
 
+	@Override
 	public double calculerInterets() {
-		return this.taux * super.getSolde();
+		return this.taux * this.getSolde();
 	}
 
+	@Override
 	public void verserInterets() {
 		this.setSolde(this.getSolde() + this.calculerInterets());
 	}

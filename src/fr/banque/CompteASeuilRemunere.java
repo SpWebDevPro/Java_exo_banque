@@ -1,15 +1,15 @@
 package fr.banque;
 
-public class CompteASeuil extends Compte implements ICompteASeuil {
+public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeuil {
 
 	private double seuil;
 
-	public CompteASeuil() {
-		super();
+	public CompteASeuilRemunere() {
+		this(000000, 0, 0, 0);
 	}
 
-	public CompteASeuil(int numero, double soldeInitial, double seuil) {
-		super(numero, soldeInitial);
+	public CompteASeuilRemunere(int numero, double soldeInitial, double taux, double seuil) {
+		super(numero, soldeInitial, taux);
 		this.seuil = seuil;
 	}
 
@@ -21,11 +21,6 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
 	@Override
 	public void setSeuil(double seuil) {
 		this.seuil = seuil;
-	}
-
-	@Override
-	public String toString() {
-		return super.toString() + ", seuil : " + this.getSeuil();
 	}
 
 	@Override
