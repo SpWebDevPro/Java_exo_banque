@@ -28,13 +28,13 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
 		return super.toString() + ", seuil : " + this.getSeuil();
 	}
 
-	@Override
-	public void retirer(double valeur) {
-		if (this.getSolde() - valeur > this.seuil) {
-			super.retirer(valeur);
-		} else {
-			System.out.println("Vous n'avez pas le droit de retirer cette somme");
-		}
-	}
+//@Override
+//	public void retirer(double valeur) {
+//		if (this.getSolde() - valeur > this.seuil) {
+//			super.retirer(valeur);
+//		} else {
+//			System.out.println("Vous n'avez pas le droit de retirer cette somme");
+//		}
+//	}
 
 }

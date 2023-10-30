@@ -1,10 +1,14 @@
 package fr.banque;
 
-public interface ICompteRemunere {
+public interface ICompteRemunere extends ICompte {
 
-	public double calculerInterets();
+	public default double calculerInterets() {
+		return this.getSolde() * this.getTaux();
+	}
 
-	public void verserInterets();
+	public default void verserInterets() {
+		this.ajouter(this.calculerInterets());
+	}
 
 	public double getTaux();
 
