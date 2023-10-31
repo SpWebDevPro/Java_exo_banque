@@ -3,7 +3,6 @@ package fr.banque;
 public class CompteRemunere extends Compte {
 
 	private double taux;
-	// valeur sera comprise entre 0 et 1
 
 	public CompteRemunere() {
 		super();
@@ -11,15 +10,7 @@ public class CompteRemunere extends Compte {
 
 	public CompteRemunere(int numero, double soldeInitial, double taux) {
 		super(numero, soldeInitial);
-		this.taux = taux;
-	}
-
-	public double getTaux() {
-		return this.taux;
-	}
-
-	public void setTaux(double taux) {
-		this.taux = taux;
+		this.setTaux(taux);
 	}
 
 	@Override
@@ -28,11 +19,23 @@ public class CompteRemunere extends Compte {
 	}
 
 	public double calculerInterets() {
-		return this.taux * super.getSolde();
+		return this.getTaux() * super.getSolde();
 	}
 
 	public void verserInterets() {
 		this.setSolde(this.getSolde() + this.calculerInterets());
+	}
+
+	public double getTaux() {
+		return this.taux;
+	}
+
+	public void setTaux(double taux) {
+		if (taux >= 0 && taux < 1) {
+			this.taux = taux;
+		} else {
+			this.taux = 0;
+		}
 	}
 
 }

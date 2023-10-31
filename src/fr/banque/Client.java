@@ -28,8 +28,8 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client : " + this.nom + " " + this.prenom + " | numero client : " + this.numero + " | Comptes :"
-				+ this.listComptes();
+		return this.getClass().getSimpleName() + " : " + this.nom + " " + this.prenom + " | numero client : "
+				+ this.numero + " | Comptes :" + this.listComptes();
 	}
 
 	public String listComptes() {

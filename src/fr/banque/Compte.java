@@ -16,15 +16,15 @@ public class Compte {
 
 	@Override
 	public String toString() {
-		return "numero de compte : " + this.numero + ", solde : " + this.solde;
+		return this.getClass().getSimpleName() + ": " + this.getNumero() + ", solde : " + this.getSolde();
 	}
 
 	public void ajouter(double unMontant) {
-		this.solde = this.solde + unMontant;
+		this.setSolde(this.getSolde() + unMontant);
 	}
 
 	public void retirer(double unMontant) {
-		this.solde = this.solde - unMontant;
+		this.setSolde(this.getSolde() - unMontant);
 	}
 
 	public int getNumero() {

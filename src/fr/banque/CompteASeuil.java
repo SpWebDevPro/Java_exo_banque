@@ -10,15 +10,7 @@ public class CompteASeuil extends Compte {
 
 	public CompteASeuil(int numero, double soldeInitial, double seuil) {
 		super(numero, soldeInitial);
-		this.seuil = seuil;
-	}
-
-	public double getSeuil() {
-		return this.seuil;
-	}
-
-	public void setSeuil(double seuil) {
-		this.seuil = seuil;
+		this.setSeuil(seuil);
 	}
 
 	@Override
@@ -28,11 +20,19 @@ public class CompteASeuil extends Compte {
 
 	@Override
 	public void retirer(double valeur) {
-		if (this.getSolde() - valeur > this.seuil) {
+		if (this.getSolde() - valeur > this.getSeuil()) {
 			super.retirer(valeur);
 		} else {
 			System.out.println("Vous n'avez pas le droit de retirer cette somme");
 		}
+	}
+
+	public double getSeuil() {
+		return this.seuil;
+	}
+
+	public void setSeuil(double seuil) {
+		this.seuil = seuil;
 	}
 
 }
