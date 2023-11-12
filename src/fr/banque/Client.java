@@ -1,8 +1,6 @@
 package fr.banque;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Client {
 
@@ -112,37 +110,15 @@ public class Client {
 
 	// verser les intérêts sur les comptes :
 
-	// soit on filtre d'abord les comptes rémunérés
-	public List<CompteRemunere> getComptesRemuneres() {
-		List<CompteRemunere> comptesRemunereList = new ArrayList<>();
-		for (Compte compte : this.getComptes()) {
-			if (compte instanceof CompteRemunere) {
-				comptesRemunereList.add((CompteRemunere) compte);
-			}
-		}
-		return comptesRemunereList;
-	}
-
-	public void verserInteretsComptesRemuneres() {
-		for (CompteRemunere compte : this.getComptesRemuneres()) {
-			compte.verserInterets();
-		}
-	}
-
-	// soit on boucle directement sur tous les comptes
+	// On boucle directement sur tous les comptes
+	// en vérifiant qu'il appartient à la famille des comptes rémunérés via
+	// l'interface
 	public void verserInteretsComptes() {
 		for (Compte compte : this.comptes) {
-			if (compte instanceof CompteRemunere) {
-				((CompteRemunere) compte).verserInterets();
+			if (compte instanceof ICompteRemunere) {
+				((ICompteRemunere) compte).verserInterets();
 			}
 		}
 	}
 
-	public void verserInteretsComptesUsingInterface() {
-		for (Compte compte : this.comptes) {
-			if (compte instanceof CompteASeuilRemunere) {
-				((CompteASeuilRemunere) compte).verserInterets();
-			}
-		}
-	}
 }

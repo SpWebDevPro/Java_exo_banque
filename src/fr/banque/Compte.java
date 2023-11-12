@@ -11,21 +11,13 @@ public class Compte implements ICompte {
 
 	public Compte(int numero, double soldeInitial) {
 		this.numero = numero;
-		this.solde = soldeInitial;
+		this.setSolde(soldeInitial);
 	}
 
 	@Override
 	public String toString() {
 		return "numero de compte : " + this.numero + ", solde : " + this.solde;
 	}
-
-//	public void ajouter(double unMontant) {
-//		this.solde = this.solde + unMontant;
-//	}
-
-//	public void retirer(double unMontant) {
-//		this.solde = this.solde - unMontant;
-//	}
 
 	@Override
 	public int getNumero() {

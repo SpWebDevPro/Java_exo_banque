@@ -2,9 +2,6 @@ package fr.banque;
 
 public interface ICompteASeuil extends ICompte {
 
-	// TODO vérifier quelle méthode de la classe CompteASeuil
-	// on peut faire passer de la classe à l'interface
-
 	@Override
 	public default void retirer(double uneValeur) {
 		if (this.getSolde() - uneValeur > this.getSeuil()) {

@@ -69,11 +69,6 @@ public class Run {
 		clientA.ajouterCompte(compteSeuil2);
 		System.out.println(clientA.toString());
 
-		// test 1ere façon de verser les intérêts
-		System.out.println(clientA.getComptesRemuneres());
-		clientA.verserInteretsComptesRemuneres();
-		System.out.println(clientA.getComptesRemuneres());
-
 		// test 2eme façon de verser les intérêts
 		clientA.verserInteretsComptes();
 		System.out.println(clientA.toString());
@@ -87,7 +82,7 @@ public class Run {
 		clientA.ajouterCompte(compteASeuilRem2);
 
 		// tester versement interet suite à implementation de l'interface
-		clientA.verserInteretsComptesUsingInterface();
+		clientA.verserInteretsComptes();
 		System.out.println(clientA.toString());
 
 		// tester calculer interets

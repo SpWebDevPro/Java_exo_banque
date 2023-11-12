@@ -29,14 +29,4 @@ public class CompteRemunere extends Compte implements ICompteRemunere {
 		return super.toString() + ", taux : " + this.getTaux() + ", interêts : " + this.calculerInterets();
 	}
 
-//	@Override
-//	public double calculerInterets() {
-//		return this.taux * this.getSolde();
-//	}
-//
-//	@Override
-//	public void verserInterets() {
-//		this.setSolde(this.getSolde() + this.calculerInterets());
-//	}
-
 }
